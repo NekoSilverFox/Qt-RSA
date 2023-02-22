@@ -984,6 +984,11 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean compiler_ui
 main.o: ../Qt-RSA/main.cpp ../Qt-RSA/client.h \
 		/usr/local/Qt-6.3.0/lib/QtWidgets.framework/Headers/QWidget \
 		/usr/local/Qt-6.3.0/lib/QtWidgets.framework/Headers/qwidget.h \
+		../Qt-RSA/rsa-math.h \
+		/usr/local/Qt-6.3.0/lib/QtCore.framework/Headers/QRandomGenerator \
+		/usr/local/Qt-6.3.0/lib/QtCore.framework/Headers/qrandom.h \
+		/usr/local/Qt-6.3.0/lib/QtCore.framework/Headers/qDebug \
+		/usr/local/Qt-6.3.0/lib/QtCore.framework/Headers/qdebug.h \
 		/usr/local/Qt-6.3.0/lib/QtWidgets.framework/Headers/QApplication \
 		/usr/local/Qt-6.3.0/lib/QtWidgets.framework/Headers/qapplication.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../Qt-RSA/main.cpp
