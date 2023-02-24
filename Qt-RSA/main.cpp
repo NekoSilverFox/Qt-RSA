@@ -21,5 +21,7 @@ int main(int argc, char *argv[])
              << "fn= " << key.fn << "\n"
              << "d = " << key.d << "\n";
 
+    encryptionString("a文ф");
+
 //    return a.exec();
 }

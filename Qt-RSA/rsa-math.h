@@ -99,13 +99,6 @@ quint64 get_k(const quint64 p, const quint64 q, const quint64 e)
     quint64 k = 1;
     while (true)
     {
-        qDebug() << "p = " << p
-                 << "q = " << q
-                 << "n = " << p * q
-                 << "fn= " << get_fn(p, q)
-                 << "e = " << e
-                 << "k = " << k;
-
         if (0 == (k * get_fn(p, q) + 1) % e) return k;
         else k++;
     }
@@ -150,6 +143,33 @@ RSAKey generateRSAKey(const quint64 min_p_q, const quint64 max_p_q)
     key.d = get_d(key.k, key.p, key.q, key.e);
 
     return key;
+}
+
+
+/**
+ * @brief encryptionChar
+ * @param str
+ * @return
+ */
+QByteArray encryptionString(const QString str)
+{
+    QByteArray resByteArray = str.toUtf8();
+
+    for (auto c : resByteArray)
+    {
+        qDebug() << c * 20;
+    }
+
+    return resByteArray;
+}
+
+/** 解密字符
+ * @brief decryptionChar
+ * @param c
+ */
+void decryptionChar(const char c)
+{
+
 }
 
 #endif // RSAMATH_H
