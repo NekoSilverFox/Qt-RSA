@@ -1,5 +1,6 @@
 #include "client.h"
 #include "rsa-math.h"
+#include <QDebug>
 
 #include <QApplication>
 
@@ -11,8 +12,6 @@ int main(int argc, char *argv[])
 
     RSAKey key = generateRSAKey(16, 25);
 
-    qDebug() << isMutuallyPrime(352, 3);
-    qDebug() << isMutuallyPrime(352, 7);
     qDebug() << "p = " << key.p << "\n"
              << "q = " << key.q << "\n"
              << "e = " << key.e << "\n"
@@ -21,7 +20,18 @@ int main(int argc, char *argv[])
              << "fn= " << key.fn << "\n"
              << "d = " << key.d << "\n";
 
-    encryptionString("a文ф");
-
+//    qDebug() << QString("a").toLatin1();
+#if 0
+    QByteArray byteArr = encryptionString("a", 3, 391);
+    qDebug() << byteArr;
+    QString res_str = decryptionChar(byteArr, 587, 391);
+    qDebug() << res_str;
+#endif
+    QByteArray byteArr = encryptionString("a", key.e, key.n);
+    qDebug() << "加密后的 bytearray" << byteArr;
+    QString res_str = decryptionChar(byteArr, key.d, key.n);
+    qDebug() << "解密后的 bytearray" << res_str;
 //    return a.exec();
 }
+
+
