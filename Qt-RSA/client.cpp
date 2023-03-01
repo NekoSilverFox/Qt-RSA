@@ -10,6 +10,9 @@ Client::Client(QWidget *parent) :
 
     connect(ui->btnGenerateNewRSAParameters, &QPushButton::clicked, this, &Client::clickBtnGenerateNewRSAParameters);
     connect(ui->btnReset, &QPushButton::clicked, this, &Client::clickBtnReset);
+    connect(ui->btnSendPublicKey, &QPushButton::clicked,
+            this, [=](){ emit Client::sendPublicKey(ui->le_public_e->text().toUInt(), ui->le_public_n->text().toUInt()); });
+
 }
 
 Client::~Client()

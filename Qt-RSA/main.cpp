@@ -1,4 +1,4 @@
-#include "client.h"
+#include "widgetmanager.h"
 #include "rsa.h"
 
 #include <QDebug>
@@ -8,10 +8,7 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
-    Client client;
-    client.show();
-
-
+    WidgetManager widgetManger;
 
     return a.exec();
 }

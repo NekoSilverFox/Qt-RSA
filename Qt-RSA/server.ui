@@ -82,10 +82,10 @@
        </widget>
       </item>
       <item>
-       <widget class="QPlainTextEdit" name="plainTextEdit"/>
+       <widget class="QPlainTextEdit" name="pteExplicitText"/>
       </item>
       <item>
-       <widget class="QPushButton" name="btnDecrypt">
+       <widget class="QPushButton" name="btnEncrypt">
         <property name="text">
          <string>🔐Encrypted Text</string>
         </property>
@@ -105,7 +105,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QTextBrowser" name="textBrowser_2"/>
+       <widget class="QTextBrowser" name="tbCodedText"/>
       </item>
       <item>
        <widget class="QPushButton" name="btnDecrypt_2">

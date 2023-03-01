@@ -60,7 +60,7 @@ public:
     QLabel *label_20;
     QLineEdit *le_public_n;
     QLineEdit *le_public_e;
-    QPushButton *pushButton_2;
+    QPushButton *btnSendPublicKey;
     QWidget *widget_3;
     QVBoxLayout *verticalLayout;
     QLabel *label_22;
@@ -234,10 +234,10 @@ public:
 
         gridLayout_3->addWidget(le_public_e, 0, 1, 1, 1);
 
-        pushButton_2 = new QPushButton(groupBox_3);
-        pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
+        btnSendPublicKey = new QPushButton(groupBox_3);
+        btnSendPublicKey->setObjectName(QString::fromUtf8("btnSendPublicKey"));
 
-        gridLayout_3->addWidget(pushButton_2, 2, 0, 1, 2);
+        gridLayout_3->addWidget(btnSendPublicKey, 2, 0, 1, 2);
 
 
         horizontalLayout->addWidget(groupBox_3);
@@ -289,8 +289,8 @@ public:
         QWidget::setTabOrder(le_privete_n, btnReset);
         QWidget::setTabOrder(btnReset, le_public_e);
         QWidget::setTabOrder(le_public_e, le_public_n);
-        QWidget::setTabOrder(le_public_n, pushButton_2);
-        QWidget::setTabOrder(pushButton_2, textBrowser);
+        QWidget::setTabOrder(le_public_n, btnSendPublicKey);
+        QWidget::setTabOrder(btnSendPublicKey, textBrowser);
         QWidget::setTabOrder(textBrowser, textBrowser_2);
         QWidget::setTabOrder(textBrowser_2, btnDecrypt);
 
@@ -324,10 +324,10 @@ public:
         groupBox_3->setTitle(QCoreApplication::translate("Client", "Public Key", nullptr));
         label_19->setText(QCoreApplication::translate("Client", "e:", nullptr));
         label_20->setText(QCoreApplication::translate("Client", "n:", nullptr));
-        pushButton_2->setText(QCoreApplication::translate("Client", "Send Public key", nullptr));
+        btnSendPublicKey->setText(QCoreApplication::translate("Client", "Send Public key", nullptr));
         label_22->setText(QCoreApplication::translate("Client", "Coded text", nullptr));
         label_23->setText(QCoreApplication::translate("Client", "Explicit text", nullptr));
-        btnDecrypt->setText(QCoreApplication::translate("Client", "Decrypted text", nullptr));
+        btnDecrypt->setText(QCoreApplication::translate("Client", "\360\237\224\223Decrypted text", nullptr));
     } // retranslateUi
 
 };

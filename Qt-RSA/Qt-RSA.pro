@@ -12,12 +12,14 @@ SOURCES += \
     client.cpp \
     main.cpp \
     rsa.cpp \
-    server.cpp
+    server.cpp \
+    widgetmanager.cpp
 
 HEADERS += \
     client.h \
     rsa.h \
-    server.h
+    server.h \
+    widgetmanager.h
 
 FORMS += \
     client.ui \

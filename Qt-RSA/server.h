@@ -15,6 +15,10 @@ public:
     explicit Server(QWidget *parent = nullptr);
     ~Server();
 
+public slots:
+    void setPublicKey(unsigned int e, unsigned int n);
+    void clickBtnEncrypt();
+
 private:
     Ui::Server *ui;
 };

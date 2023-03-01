@@ -15,6 +15,9 @@ public:
     explicit Client(QWidget *parent = nullptr);
     ~Client();
 
+signals:
+    void sendPublicKey(unsigned int e, unsigned int n);
+
 private slots:
     void clickBtnGenerateNewRSAParameters();
     void clickBtnReset();

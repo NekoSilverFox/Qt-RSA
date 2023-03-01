@@ -244,7 +244,7 @@
           <widget class="QLineEdit" name="le_public_e"/>
          </item>
          <item row="2" column="0" colspan="2">
-          <widget class="QPushButton" name="pushButton_2">
+          <widget class="QPushButton" name="btnSendPublicKey">
            <property name="text">
             <string>Send Public key</string>
            </property>
@@ -304,7 +304,7 @@
   <tabstop>btnReset</tabstop>
   <tabstop>le_public_e</tabstop>
   <tabstop>le_public_n</tabstop>
-  <tabstop>pushButton_2</tabstop>
+  <tabstop>btnSendPublicKey</tabstop>
   <tabstop>textBrowser</tabstop>
   <tabstop>textBrowser_2</tabstop>
   <tabstop>btnDecrypt</tabstop>
