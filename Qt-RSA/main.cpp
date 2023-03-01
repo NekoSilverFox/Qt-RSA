@@ -3,14 +3,37 @@
 #include <QDebug>
 
 #include <QApplication>
+#include "ras.h"
 
+int main(int argc, char *argv[])
+{
+    QApplication a(argc, argv);
+
+    RSA *rsa = new RSA;
+
+        string plaintext_str("yezhening");                            // 字符串类型的明文
+        vector<unsigned int> ciphertext_int(plaintext_str.size(), 0); // 无符号整数类型的密文
+        string plaintext_str1(plaintext_str.size(), '\0');            // 字符串类型的明文   解密后的明文
+
+        rsa->Encrypt(plaintext_str, ciphertext_int);  // 加密得密文
+        rsa->Decrypt(ciphertext_int, plaintext_str1); // 解密得明文
+
+        delete rsa;
+
+        return 0;
+
+
+}
+
+
+#if 0
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 //    client w;
 //    w.show();
 
-    RSAKey key = generateRSAKey(16, 25);
+    RSAKey key = generateRSAKey(16, 100);
 
     qDebug() << "p = " << key.p << "\n"
              << "q = " << key.q << "\n"
@@ -33,5 +56,5 @@ int main(int argc, char *argv[])
     qDebug() << "解密后的 bytearray" << res_str;
 //    return a.exec();
 }
-
+#endif
 

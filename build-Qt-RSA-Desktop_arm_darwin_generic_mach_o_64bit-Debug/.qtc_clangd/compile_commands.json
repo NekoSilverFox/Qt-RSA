@@ -282,10 +282,10 @@
         "-Wno-unknown-pragmas",
         "-Wno-unknown-warning-option",
         "-Wno-documentation-unknown-command",
-        "/Users/fox/雪狸的文件/Programma/Qt-RSA/Qt-RSA/rsa-math.h"
+        "/Users/fox/雪狸的文件/Programma/Qt-RSA/Qt-RSA/rsa.h"
     ],
     "directory": "/Users/fox/雪狸的文件/Programma/Qt-RSA/build-Qt-RSA-Desktop_arm_darwin_generic_mach_o_64bit-Debug/.qtc_clangd",
-    "file": "/Users/fox/雪狸的文件/Programma/Qt-RSA/Qt-RSA/rsa-math.h"
+    "file": "/Users/fox/雪狸的文件/Programma/Qt-RSA/Qt-RSA/rsa.h"
 },
 {
     "arguments": [

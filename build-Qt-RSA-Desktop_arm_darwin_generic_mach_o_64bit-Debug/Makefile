@@ -292,6 +292,7 @@ DIST          = /usr/local/Qt-6.3.0/mkspecs/features/spec_pre.prf \
 		/usr/local/Qt-6.3.0/mkspecs/features/qt_config.prf \
 		/usr/local/Qt-6.3.0/mkspecs/macx-clang/qmake.conf \
 		/usr/local/Qt-6.3.0/mkspecs/features/spec_post.prf \
+		../Qt-RSA/.qmake.stash \
 		/usr/local/Qt-6.3.0/mkspecs/features/exclusive_builds.prf \
 		/usr/local/Qt-6.3.0/mkspecs/features/mac/sdk.prf \
 		/usr/local/Qt-6.3.0/mkspecs/features/toolchain.prf \
@@ -321,6 +322,7 @@ DIST          = /usr/local/Qt-6.3.0/mkspecs/features/spec_pre.prf \
 		/usr/local/Qt-6.3.0/mkspecs/features/yacc.prf \
 		/usr/local/Qt-6.3.0/mkspecs/features/lex.prf \
 		../Qt-RSA/Qt-RSA.pro ../Qt-RSA/client.h \
+		../Qt-RSA/ras.h \
 		../Qt-RSA/rsa-math.h ../Qt-RSA/main.cpp \
 		../Qt-RSA/client.cpp
 QMAKE_TARGET  = Qt-RSA
@@ -331,7 +333,7 @@ TARGET        = Qt-RSA.app/Contents/MacOS/Qt-RSA
 EXPORT_QMAKE_MAC_SDK = macosx
 EXPORT_QMAKE_MAC_SDK_VERSION = 13.1
 EXPORT_QMAKE_XCODE_DEVELOPER_PATH = /Applications/Xcode.app/Contents/Developer
-EXPORT__QMAKE_STASH_ = 
+EXPORT__QMAKE_STASH_ = /Users/fox/雪狸的文件/Programma/Qt-RSA/build-Qt-RSA-Desktop_arm_darwin_generic_mach_o_64bit-Debug/.qmake.stash
 EXPORT_VALID_ARCHS = arm64
 EXPORT_DEFAULT_ARCHS = arm64
 EXPORT_ARCHS = $(filter $(EXPORT_VALID_ARCHS), $(if $(ARCHS), $(ARCHS), $(if $(EXPORT_DEFAULT_ARCHS), $(EXPORT_DEFAULT_ARCHS), $(EXPORT_VALID_ARCHS))))
@@ -582,6 +584,7 @@ Makefile: ../Qt-RSA/Qt-RSA.pro /usr/local/Qt-6.3.0/mkspecs/macx-clang/qmake.conf
 		/usr/local/Qt-6.3.0/mkspecs/features/qt_config.prf \
 		/usr/local/Qt-6.3.0/mkspecs/macx-clang/qmake.conf \
 		/usr/local/Qt-6.3.0/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		/usr/local/Qt-6.3.0/mkspecs/features/exclusive_builds.prf \
 		/usr/local/Qt-6.3.0/mkspecs/features/mac/sdk.prf \
 		/usr/local/Qt-6.3.0/mkspecs/features/toolchain.prf \
@@ -850,6 +853,7 @@ Makefile: ../Qt-RSA/Qt-RSA.pro /usr/local/Qt-6.3.0/mkspecs/macx-clang/qmake.conf
 /usr/local/Qt-6.3.0/mkspecs/features/qt_config.prf:
 /usr/local/Qt-6.3.0/mkspecs/macx-clang/qmake.conf:
 /usr/local/Qt-6.3.0/mkspecs/features/spec_post.prf:
+.qmake.stash:
 /usr/local/Qt-6.3.0/mkspecs/features/exclusive_builds.prf:
 /usr/local/Qt-6.3.0/mkspecs/features/mac/sdk.prf:
 /usr/local/Qt-6.3.0/mkspecs/features/toolchain.prf:
@@ -912,7 +916,7 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /usr/local/Qt-6.3.0/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../Qt-RSA/client.h ../Qt-RSA/rsa-math.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../Qt-RSA/client.h ../Qt-RSA/ras.h ../Qt-RSA/rsa-math.h $(DISTDIR)/
 	$(COPY_FILE) --parents ../Qt-RSA/main.cpp ../Qt-RSA/client.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../Qt-RSA/client.ui $(DISTDIR)/
 
@@ -924,6 +928,7 @@ clean: compiler_clean
 
 distclean: clean 
 	-$(DEL_FILE) -r Qt-RSA.app
+	-$(DEL_FILE) .qmake.stash
 	-$(DEL_FILE) Makefile
 
 
@@ -989,8 +994,10 @@ main.o: ../Qt-RSA/main.cpp ../Qt-RSA/client.h \
 		/usr/local/Qt-6.3.0/lib/QtCore.framework/Headers/qrandom.h \
 		/usr/local/Qt-6.3.0/lib/QtCore.framework/Headers/qDebug \
 		/usr/local/Qt-6.3.0/lib/QtCore.framework/Headers/qdebug.h \
+		/usr/local/Qt-6.3.0/lib/QtCore.framework/Headers/QDebug \
 		/usr/local/Qt-6.3.0/lib/QtWidgets.framework/Headers/QApplication \
-		/usr/local/Qt-6.3.0/lib/QtWidgets.framework/Headers/qapplication.h
+		/usr/local/Qt-6.3.0/lib/QtWidgets.framework/Headers/qapplication.h \
+		../Qt-RSA/ras.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../Qt-RSA/main.cpp
 
 client.o: ../Qt-RSA/client.cpp ../Qt-RSA/client.h \

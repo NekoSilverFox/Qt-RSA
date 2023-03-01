@@ -14,7 +14,7 @@ SOURCES += \
 
 HEADERS += \
     client.h \
-    rsa-math.h
+    rsa.h
 
 FORMS += \
     client.ui
