@@ -288,7 +288,7 @@
       <item>
        <widget class="QPushButton" name="btnDecrypt">
         <property name="text">
-         <string>Decrypted text</string>
+         <string>🔓Decrypted text</string>
         </property>
        </widget>
       </item>

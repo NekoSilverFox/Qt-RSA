@@ -69,7 +69,7 @@ public:
     QVBoxLayout *verticalLayout_2;
     QLabel *label_23;
     QTextBrowser *textBrowser_2;
-    QPushButton *pushButton_3;
+    QPushButton *btnDecrypt;
 
     void setupUi(QWidget *Client)
     {
@@ -276,10 +276,10 @@ public:
 
         verticalLayout_2->addWidget(textBrowser_2);
 
-        pushButton_3 = new QPushButton(widget_4);
-        pushButton_3->setObjectName(QString::fromUtf8("pushButton_3"));
+        btnDecrypt = new QPushButton(widget_4);
+        btnDecrypt->setObjectName(QString::fromUtf8("btnDecrypt"));
 
-        verticalLayout_2->addWidget(pushButton_3);
+        verticalLayout_2->addWidget(btnDecrypt);
 
 
         verticalLayout_3->addWidget(widget_4);
@@ -292,7 +292,7 @@ public:
         QWidget::setTabOrder(le_public_n, pushButton_2);
         QWidget::setTabOrder(pushButton_2, textBrowser);
         QWidget::setTabOrder(textBrowser, textBrowser_2);
-        QWidget::setTabOrder(textBrowser_2, pushButton_3);
+        QWidget::setTabOrder(textBrowser_2, btnDecrypt);
 
         retranslateUi(Client);
 
@@ -327,7 +327,7 @@ public:
         pushButton_2->setText(QCoreApplication::translate("Client", "Send Public key", nullptr));
         label_22->setText(QCoreApplication::translate("Client", "Coded text", nullptr));
         label_23->setText(QCoreApplication::translate("Client", "Explicit text", nullptr));
-        pushButton_3->setText(QCoreApplication::translate("Client", "Decrypted text", nullptr));
+        btnDecrypt->setText(QCoreApplication::translate("Client", "Decrypted text", nullptr));
     } // retranslateUi
 
 };

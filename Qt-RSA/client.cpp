@@ -54,5 +54,4 @@ void Client::clickBtnReset()
 {
     ui->le_privete_d->setText(ui->lb_d->text());
     ui->le_privete_n->setText(ui->lb_n->text());
-
 }
