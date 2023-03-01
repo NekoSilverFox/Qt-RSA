@@ -52,11 +52,11 @@ OBJECTS_DIR   = ./
 
 ####### Files
 
-SOURCES       = ../Qt-RSA/clientw.cpp \
-		../Qt-RSA/main.cpp moc_clientw.cpp
-OBJECTS       = clientw.o \
+SOURCES       = ../Qt-RSA/client.cpp \
+		../Qt-RSA/main.cpp moc_client.cpp
+OBJECTS       = client.o \
 		main.o \
-		moc_clientw.o
+		moc_client.o
 DIST          = /usr/local/Qt-6.3.0/mkspecs/features/spec_pre.prf \
 		/usr/local/Qt-6.3.0/mkspecs/features/device_config.prf \
 		/usr/local/Qt-6.3.0/mkspecs/common/unix.conf \
@@ -321,8 +321,8 @@ DIST          = /usr/local/Qt-6.3.0/mkspecs/features/spec_pre.prf \
 		/usr/local/Qt-6.3.0/mkspecs/features/exceptions.prf \
 		/usr/local/Qt-6.3.0/mkspecs/features/yacc.prf \
 		/usr/local/Qt-6.3.0/mkspecs/features/lex.prf \
-		../Qt-RSA/Qt-RSA.pro ../Qt-RSA/clientw.h \
-		../Qt-RSA/rsa.h ../Qt-RSA/clientw.cpp \
+		../Qt-RSA/Qt-RSA.pro ../Qt-RSA/client.h \
+		../Qt-RSA/rsa.h ../Qt-RSA/client.cpp \
 		../Qt-RSA/main.cpp
 QMAKE_TARGET  = Qt-RSA
 DESTDIR       = 
@@ -344,7 +344,7 @@ include /usr/local/Qt-6.3.0/mkspecs/features/mac/sdk.mk
 first: all
 ####### Build rules
 
-Qt-RSA.app/Contents/MacOS/Qt-RSA: ui_clientw.h $(OBJECTS)  
+Qt-RSA.app/Contents/MacOS/Qt-RSA: ui_client.h $(OBJECTS)  
 	@test -d Qt-RSA.app/Contents/MacOS/ || mkdir -p Qt-RSA.app/Contents/MacOS/
 	$(LINK) $(LFLAGS) -o $(TARGET)  $(OBJECTS) $(OBJCOMP) $(LIBS)
 
@@ -915,9 +915,9 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /usr/local/Qt-6.3.0/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../Qt-RSA/clientw.h ../Qt-RSA/rsa.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../Qt-RSA/clientw.cpp ../Qt-RSA/main.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../Qt-RSA/clientw.ui $(DISTDIR)/
+	$(COPY_FILE) --parents ../Qt-RSA/client.h ../Qt-RSA/rsa.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../Qt-RSA/client.cpp ../Qt-RSA/main.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../Qt-RSA/client.ui $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -952,26 +952,26 @@ compiler_moc_predefs_clean:
 moc_predefs.h: /usr/local/Qt-6.3.0/mkspecs/features/data/dummy.cpp
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ -pipe -stdlib=libc++ -g -std=gnu++1z $(EXPORT_ARCH_ARGS) -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -mmacosx-version-min=10.14 -Wall -Wextra -dM -E -o moc_predefs.h /usr/local/Qt-6.3.0/mkspecs/features/data/dummy.cpp
 
-compiler_moc_header_make_all: moc_clientw.cpp
+compiler_moc_header_make_all: moc_client.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_clientw.cpp
-moc_clientw.cpp: ../Qt-RSA/clientw.h \
+	-$(DEL_FILE) moc_client.cpp
+moc_client.cpp: ../Qt-RSA/client.h \
 		/usr/local/Qt-6.3.0/lib/QtWidgets.framework/Headers/QWidget \
 		/usr/local/Qt-6.3.0/lib/QtWidgets.framework/Headers/qwidget.h \
 		moc_predefs.h \
 		/usr/local/Qt-6.3.0/libexec/moc
-	/usr/local/Qt-6.3.0/libexec/moc $(DEFINES) --include /Users/fox/雪狸的文件/Programma/Qt-RSA/build-Qt-RSA-Desktop_arm_darwin_generic_mach_o_64bit-Debug/moc_predefs.h -I/usr/local/Qt-6.3.0/mkspecs/macx-clang -I/Users/fox/雪狸的文件/Programma/Qt-RSA/Qt-RSA -I/usr/local/Qt-6.3.0/lib/QtWidgets.framework/Headers -I/usr/local/Qt-6.3.0/lib/QtGui.framework/Headers -I/usr/local/Qt-6.3.0/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/usr/local/Qt-6.3.0/lib ../Qt-RSA/clientw.h -o moc_clientw.cpp
+	/usr/local/Qt-6.3.0/libexec/moc $(DEFINES) --include /Users/fox/雪狸的文件/Programma/Qt-RSA/build-Qt-RSA-Desktop_arm_darwin_generic_mach_o_64bit-Debug/moc_predefs.h -I/usr/local/Qt-6.3.0/mkspecs/macx-clang -I/Users/fox/雪狸的文件/Programma/Qt-RSA/Qt-RSA -I/usr/local/Qt-6.3.0/lib/QtWidgets.framework/Headers -I/usr/local/Qt-6.3.0/lib/QtGui.framework/Headers -I/usr/local/Qt-6.3.0/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/usr/local/Qt-6.3.0/lib ../Qt-RSA/client.h -o moc_client.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ui_clientw.h
+compiler_uic_make_all: ui_client.h
 compiler_uic_clean:
-	-$(DEL_FILE) ui_clientw.h
-ui_clientw.h: ../Qt-RSA/clientw.ui \
+	-$(DEL_FILE) ui_client.h
+ui_client.h: ../Qt-RSA/client.ui \
 		/usr/local/Qt-6.3.0/libexec/uic
-	/usr/local/Qt-6.3.0/libexec/uic ../Qt-RSA/clientw.ui -o ui_clientw.h
+	/usr/local/Qt-6.3.0/libexec/uic ../Qt-RSA/client.ui -o ui_client.h
 
 compiler_rez_source_make_all:
 compiler_rez_source_clean:
@@ -985,13 +985,13 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean compiler_ui
 
 ####### Compile
 
-clientw.o: ../Qt-RSA/clientw.cpp ui_client.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o clientw.o ../Qt-RSA/clientw.cpp
-
-main.o: ../Qt-RSA/main.cpp ../Qt-RSA/clientw.h \
+client.o: ../Qt-RSA/client.cpp ../Qt-RSA/client.h \
 		/usr/local/Qt-6.3.0/lib/QtWidgets.framework/Headers/QWidget \
 		/usr/local/Qt-6.3.0/lib/QtWidgets.framework/Headers/qwidget.h \
-		../Qt-RSA/rsa.h \
+		ui_client.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o client.o ../Qt-RSA/client.cpp
+
+main.o: ../Qt-RSA/main.cpp ../Qt-RSA/rsa.h \
 		/usr/local/Qt-6.3.0/lib/QtCore.framework/Headers/qDebug \
 		/usr/local/Qt-6.3.0/lib/QtCore.framework/Headers/qdebug.h \
 		/usr/local/Qt-6.3.0/lib/QtCore.framework/Headers/QRandomGenerator \
@@ -1001,8 +1001,8 @@ main.o: ../Qt-RSA/main.cpp ../Qt-RSA/clientw.h \
 		/usr/local/Qt-6.3.0/lib/QtWidgets.framework/Headers/qapplication.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../Qt-RSA/main.cpp
 
-moc_clientw.o: moc_clientw.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_clientw.o moc_clientw.cpp
+moc_client.o: moc_client.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_client.o moc_client.cpp
 
 ####### Install
 

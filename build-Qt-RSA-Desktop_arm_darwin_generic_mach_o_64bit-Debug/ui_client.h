@@ -23,7 +23,7 @@
 
 QT_BEGIN_NAMESPACE
 
-class Ui_client
+class Ui_Client
 {
 public:
     QVBoxLayout *verticalLayout_3;
@@ -71,14 +71,14 @@ public:
     QTextBrowser *textBrowser_2;
     QPushButton *pushButton_3;
 
-    void setupUi(QWidget *client)
+    void setupUi(QWidget *Client)
     {
-        if (client->objectName().isEmpty())
-            client->setObjectName(QString::fromUtf8("client"));
-        client->resize(448, 758);
-        verticalLayout_3 = new QVBoxLayout(client);
+        if (Client->objectName().isEmpty())
+            Client->setObjectName(QString::fromUtf8("Client"));
+        Client->resize(434, 779);
+        verticalLayout_3 = new QVBoxLayout(Client);
         verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
-        label_13 = new QLabel(client);
+        label_13 = new QLabel(Client);
         label_13->setObjectName(QString::fromUtf8("label_13"));
         QFont font;
         font.setPointSize(32);
@@ -88,7 +88,7 @@ public:
 
         verticalLayout_3->addWidget(label_13);
 
-        groupBox = new QGroupBox(client);
+        groupBox = new QGroupBox(Client);
         groupBox->setObjectName(QString::fromUtf8("groupBox"));
         verticalLayout_4 = new QVBoxLayout(groupBox);
         verticalLayout_4->setObjectName(QString::fromUtf8("verticalLayout_4"));
@@ -171,7 +171,7 @@ public:
 
         verticalLayout_3->addWidget(groupBox);
 
-        widget = new QWidget(client);
+        widget = new QWidget(Client);
         widget->setObjectName(QString::fromUtf8("widget"));
         horizontalLayout = new QHBoxLayout(widget);
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
@@ -245,7 +245,7 @@ public:
 
         verticalLayout_3->addWidget(widget);
 
-        widget_3 = new QWidget(client);
+        widget_3 = new QWidget(Client);
         widget_3->setObjectName(QString::fromUtf8("widget_3"));
         verticalLayout = new QVBoxLayout(widget_3);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
@@ -262,7 +262,7 @@ public:
 
         verticalLayout_3->addWidget(widget_3);
 
-        widget_4 = new QWidget(client);
+        widget_4 = new QWidget(Client);
         widget_4->setObjectName(QString::fromUtf8("widget_4"));
         verticalLayout_2 = new QVBoxLayout(widget_4);
         verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
@@ -285,46 +285,46 @@ public:
         verticalLayout_3->addWidget(widget_4);
 
 
-        retranslateUi(client);
+        retranslateUi(Client);
 
-        QMetaObject::connectSlotsByName(client);
+        QMetaObject::connectSlotsByName(Client);
     } // setupUi
 
-    void retranslateUi(QWidget *client)
+    void retranslateUi(QWidget *Client)
     {
-        client->setWindowTitle(QCoreApplication::translate("client", "client", nullptr));
-        label_13->setText(QCoreApplication::translate("client", "Client", nullptr));
-        groupBox->setTitle(QCoreApplication::translate("client", "RSA Parameter Information", nullptr));
-        label->setText(QCoreApplication::translate("client", "p:", nullptr));
-        label_7->setText(QCoreApplication::translate("client", "TextLabel", nullptr));
-        label_2->setText(QCoreApplication::translate("client", "q:", nullptr));
-        label_12->setText(QCoreApplication::translate("client", "TextLabel", nullptr));
-        label_3->setText(QCoreApplication::translate("client", "n:", nullptr));
-        label_8->setText(QCoreApplication::translate("client", "TextLabel", nullptr));
-        label_4->setText(QCoreApplication::translate("client", "\317\206(n):", nullptr));
-        label_11->setText(QCoreApplication::translate("client", "TextLabel", nullptr));
-        label_5->setText(QCoreApplication::translate("client", "e:", nullptr));
-        label_9->setText(QCoreApplication::translate("client", "TextLabel", nullptr));
-        label_6->setText(QCoreApplication::translate("client", "d:", nullptr));
-        label_10->setText(QCoreApplication::translate("client", "TextLabel", nullptr));
-        pushButton->setText(QCoreApplication::translate("client", "Generate new RSA parameter", nullptr));
-        groupBox_2->setTitle(QCoreApplication::translate("client", "Private Key", nullptr));
-        label_15->setText(QCoreApplication::translate("client", "d:", nullptr));
-        label_14->setText(QCoreApplication::translate("client", "n:", nullptr));
-        pushButton_4->setText(QCoreApplication::translate("client", "Reset", nullptr));
-        groupBox_3->setTitle(QCoreApplication::translate("client", "Public Key", nullptr));
-        label_19->setText(QCoreApplication::translate("client", "e:", nullptr));
-        label_20->setText(QCoreApplication::translate("client", "n:", nullptr));
-        pushButton_2->setText(QCoreApplication::translate("client", "Send Public key", nullptr));
-        label_22->setText(QCoreApplication::translate("client", "Coded text", nullptr));
-        label_23->setText(QCoreApplication::translate("client", "Explicit text", nullptr));
-        pushButton_3->setText(QCoreApplication::translate("client", "Decrypted text", nullptr));
+        Client->setWindowTitle(QCoreApplication::translate("Client", "Form", nullptr));
+        label_13->setText(QCoreApplication::translate("Client", "Client", nullptr));
+        groupBox->setTitle(QCoreApplication::translate("Client", "RSA Parameter Information", nullptr));
+        label->setText(QCoreApplication::translate("Client", "p:", nullptr));
+        label_7->setText(QCoreApplication::translate("Client", "TextLabel", nullptr));
+        label_2->setText(QCoreApplication::translate("Client", "q:", nullptr));
+        label_12->setText(QCoreApplication::translate("Client", "TextLabel", nullptr));
+        label_3->setText(QCoreApplication::translate("Client", "n:", nullptr));
+        label_8->setText(QCoreApplication::translate("Client", "TextLabel", nullptr));
+        label_4->setText(QCoreApplication::translate("Client", "\317\206(n):", nullptr));
+        label_11->setText(QCoreApplication::translate("Client", "TextLabel", nullptr));
+        label_5->setText(QCoreApplication::translate("Client", "e:", nullptr));
+        label_9->setText(QCoreApplication::translate("Client", "TextLabel", nullptr));
+        label_6->setText(QCoreApplication::translate("Client", "d:", nullptr));
+        label_10->setText(QCoreApplication::translate("Client", "TextLabel", nullptr));
+        pushButton->setText(QCoreApplication::translate("Client", "Generate new RSA parameter", nullptr));
+        groupBox_2->setTitle(QCoreApplication::translate("Client", "Private Key", nullptr));
+        label_15->setText(QCoreApplication::translate("Client", "d:", nullptr));
+        label_14->setText(QCoreApplication::translate("Client", "n:", nullptr));
+        pushButton_4->setText(QCoreApplication::translate("Client", "Reset", nullptr));
+        groupBox_3->setTitle(QCoreApplication::translate("Client", "Public Key", nullptr));
+        label_19->setText(QCoreApplication::translate("Client", "e:", nullptr));
+        label_20->setText(QCoreApplication::translate("Client", "n:", nullptr));
+        pushButton_2->setText(QCoreApplication::translate("Client", "Send Public key", nullptr));
+        label_22->setText(QCoreApplication::translate("Client", "Coded text", nullptr));
+        label_23->setText(QCoreApplication::translate("Client", "Explicit text", nullptr));
+        pushButton_3->setText(QCoreApplication::translate("Client", "Decrypted text", nullptr));
     } // retranslateUi
 
 };
 
 namespace Ui {
-    class client: public Ui_client {};
+    class Client: public Ui_Client {};
 } // namespace Ui
 
 QT_END_NAMESPACE

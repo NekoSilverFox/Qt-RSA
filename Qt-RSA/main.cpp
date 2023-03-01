@@ -1,4 +1,4 @@
-#include "clientw.h"
+#include "client.h"
 #include "rsa.h"
 
 #include <QDebug>
@@ -8,7 +8,7 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
-    client client;
+    Client client;
     client.show();
 
     RSA *rsa;
@@ -20,15 +20,14 @@ int main(int argc, char *argv[])
     {
         rsa = new RSA;
 
-        rsa->Encrypt(plaintext_str, ciphertext_int, rsa->e_arg_, rsa->n_arg_);  // 加密得密文
-        rsa->Decrypt(ciphertext_int, plaintext_str1, rsa->d_arg_, rsa->n_arg_); // 解密得明文
+        RSA::Encrypt(plaintext_str, ciphertext_int, rsa->e_arg_, rsa->n_arg_);  // 加密得密文
+        RSA::Decrypt(ciphertext_int, plaintext_str1, rsa->d_arg_, rsa->n_arg_); // 解密得明文
 
     } while (plaintext_str != plaintext_str1);
 
 
     delete rsa;
 
-//    return a.exec();
-    return 0;
+    return a.exec();
 }
 

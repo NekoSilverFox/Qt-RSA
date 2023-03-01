@@ -20,16 +20,16 @@ class RSA
 {
 public:
     RSA();                                                                            // 构造
-    void Encrypt(const string &plaintext_str, vector<unsigned int> &ciphertext_int, unsigned int e, unsigned int n);  // 加密
-    void Decrypt(const vector<unsigned int> &ciphertext_int, string &plaintext_str1, unsigned int d, unsigned int n); // 解密
+    static void Encrypt(const string &plaintext_str, vector<unsigned int> &ciphertext_int, unsigned int e, unsigned int n);  // 加密
+    static void Decrypt(const vector<unsigned int> &ciphertext_int, string &plaintext_str1, unsigned int d, unsigned int n); // 解密
 
 private:
     void KeyGen(); // 密钥生成
 
     unsigned int GetPrimeNum();                                                                    // 获取素数
     bool PrimalityTest(const unsigned int &n, const unsigned int &a);                              // Miller-Rabin素性测试
-    unsigned int QuickPowMod(const unsigned int &a, const unsigned int &q, const unsigned int &n); // 蒙哥马利快速幂模运算
-    unsigned int QuickMulMod(const unsigned int &a, const unsigned int &b, const unsigned int &c); // 快速乘模
+    static unsigned int QuickPowMod(const unsigned int &a, const unsigned int &q, const unsigned int &n); // 蒙哥马利快速幂模运算
+    static unsigned int QuickMulMod(const unsigned int &a, const unsigned int &b, const unsigned int &c); // 快速乘模
 
     unsigned int ExGcd(const unsigned int &a, const unsigned int &b, unsigned int &x, unsigned int &y); // 扩展欧几里得算法
     unsigned int GetMulInverse(const unsigned int &a, const unsigned int &b);                           // 求乘法逆元
@@ -90,7 +90,7 @@ void RSA::Encrypt(const string &plaintext_str, vector<unsigned int> &ciphertext_
 
     for (int i = 0; i < plaintext_int.size(); ++i) // 对每个明文分组，蒙哥马利快速模幂加密
     {
-        c = this->QuickPowMod(plaintext_int[i], e, n);
+        c = QuickPowMod(plaintext_int[i], e, n);
         ciphertext_int[i] = c;
     }
 
@@ -122,7 +122,7 @@ void RSA::Decrypt(const vector<unsigned int> &ciphertext_int, string &plaintext_
 
     for (int i = 0; i < ciphertext_int.size(); ++i) // 对每个密文分组，蒙哥马利快速模幂解密
     {
-        p = this->QuickPowMod(ciphertext_int[i], d, n);
+        p = QuickPowMod(ciphertext_int[i], d, n);
         plaintext_int[i] = p;
     }
 
@@ -354,10 +354,10 @@ unsigned int RSA::QuickPowMod(const unsigned int &a, const unsigned int &q, cons
     {
         if ((q_temp & 1) == 1)
         {
-            res = this->QuickMulMod(res, a_temp, n);
+            res = QuickMulMod(res, a_temp, n);
         }
 
-        a_temp = this->QuickMulMod(a_temp, a_temp, n);
+        a_temp = QuickMulMod(a_temp, a_temp, n);
 
         q_temp >>= 1;
     }
