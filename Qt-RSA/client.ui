@@ -53,7 +53,7 @@
           </widget>
          </item>
          <item row="0" column="1">
-          <widget class="QLabel" name="label_7">
+          <widget class="QLabel" name="lb_p">
            <property name="text">
             <string>TextLabel</string>
            </property>
@@ -67,7 +67,7 @@
           </widget>
          </item>
          <item row="0" column="3">
-          <widget class="QLabel" name="label_12">
+          <widget class="QLabel" name="lb_q">
            <property name="text">
             <string>TextLabel</string>
            </property>
@@ -87,7 +87,7 @@
           </widget>
          </item>
          <item row="1" column="1">
-          <widget class="QLabel" name="label_8">
+          <widget class="QLabel" name="lb_n">
            <property name="text">
             <string>TextLabel</string>
            </property>
@@ -107,7 +107,7 @@
           </widget>
          </item>
          <item row="1" column="3">
-          <widget class="QLabel" name="label_11">
+          <widget class="QLabel" name="lb_fn">
            <property name="text">
             <string>TextLabel</string>
            </property>
@@ -127,7 +127,7 @@
           </widget>
          </item>
          <item row="2" column="1">
-          <widget class="QLabel" name="label_9">
+          <widget class="QLabel" name="lb_e">
            <property name="text">
             <string>TextLabel</string>
            </property>
@@ -141,7 +141,7 @@
           </widget>
          </item>
          <item row="2" column="3">
-          <widget class="QLabel" name="label_10">
+          <widget class="QLabel" name="lb_d">
            <property name="text">
             <string>TextLabel</string>
            </property>
@@ -170,7 +170,7 @@
         </property>
         <layout class="QGridLayout" name="gridLayout_2">
          <item row="2" column="1">
-          <widget class="QLineEdit" name="lineEdit_2"/>
+          <widget class="QLineEdit" name="le_privete_n"/>
          </item>
          <item row="1" column="0">
           <widget class="QLabel" name="label_15">
@@ -180,7 +180,7 @@
           </widget>
          </item>
          <item row="1" column="1">
-          <widget class="QLineEdit" name="lineEdit"/>
+          <widget class="QLineEdit" name="le_privete_d"/>
          </item>
          <item row="2" column="0">
           <widget class="QLabel" name="label_14">
@@ -238,10 +238,10 @@
           </widget>
          </item>
          <item row="1" column="1">
-          <widget class="QLineEdit" name="lineEdit_4"/>
+          <widget class="QLineEdit" name="le_public_n"/>
          </item>
          <item row="0" column="1">
-          <widget class="QLineEdit" name="lineEdit_3"/>
+          <widget class="QLineEdit" name="le_public_e"/>
          </item>
          <item row="2" column="0" colspan="2">
           <widget class="QPushButton" name="pushButton_2">
@@ -297,6 +297,18 @@
    </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>pushButton</tabstop>
+  <tabstop>le_privete_d</tabstop>
+  <tabstop>le_privete_n</tabstop>
+  <tabstop>pushButton_4</tabstop>
+  <tabstop>le_public_e</tabstop>
+  <tabstop>le_public_n</tabstop>
+  <tabstop>pushButton_2</tabstop>
+  <tabstop>textBrowser</tabstop>
+  <tabstop>textBrowser_2</tabstop>
+  <tabstop>pushButton_3</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

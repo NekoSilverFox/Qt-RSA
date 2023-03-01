@@ -33,33 +33,33 @@ public:
     QWidget *widget_5;
     QGridLayout *gridLayout_4;
     QLabel *label;
-    QLabel *label_7;
+    QLabel *lb_p;
     QLabel *label_2;
-    QLabel *label_12;
+    QLabel *lb_q;
     QLabel *label_3;
-    QLabel *label_8;
+    QLabel *lb_n;
     QLabel *label_4;
-    QLabel *label_11;
+    QLabel *lb_fn;
     QLabel *label_5;
-    QLabel *label_9;
+    QLabel *lb_e;
     QLabel *label_6;
-    QLabel *label_10;
+    QLabel *lb_d;
     QPushButton *pushButton;
     QWidget *widget;
     QHBoxLayout *horizontalLayout;
     QGroupBox *groupBox_2;
     QGridLayout *gridLayout_2;
-    QLineEdit *lineEdit_2;
+    QLineEdit *le_privete_n;
     QLabel *label_15;
-    QLineEdit *lineEdit;
+    QLineEdit *le_privete_d;
     QLabel *label_14;
     QPushButton *pushButton_4;
     QGroupBox *groupBox_3;
     QGridLayout *gridLayout_3;
     QLabel *label_19;
     QLabel *label_20;
-    QLineEdit *lineEdit_4;
-    QLineEdit *lineEdit_3;
+    QLineEdit *le_public_n;
+    QLineEdit *le_public_e;
     QPushButton *pushButton_2;
     QWidget *widget_3;
     QVBoxLayout *verticalLayout;
@@ -102,20 +102,20 @@ public:
 
         gridLayout_4->addWidget(label, 0, 0, 1, 1);
 
-        label_7 = new QLabel(widget_5);
-        label_7->setObjectName(QString::fromUtf8("label_7"));
+        lb_p = new QLabel(widget_5);
+        lb_p->setObjectName(QString::fromUtf8("lb_p"));
 
-        gridLayout_4->addWidget(label_7, 0, 1, 1, 1);
+        gridLayout_4->addWidget(lb_p, 0, 1, 1, 1);
 
         label_2 = new QLabel(widget_5);
         label_2->setObjectName(QString::fromUtf8("label_2"));
 
         gridLayout_4->addWidget(label_2, 0, 2, 1, 1);
 
-        label_12 = new QLabel(widget_5);
-        label_12->setObjectName(QString::fromUtf8("label_12"));
+        lb_q = new QLabel(widget_5);
+        lb_q->setObjectName(QString::fromUtf8("lb_q"));
 
-        gridLayout_4->addWidget(label_12, 0, 3, 1, 1);
+        gridLayout_4->addWidget(lb_q, 0, 3, 1, 1);
 
         label_3 = new QLabel(widget_5);
         label_3->setObjectName(QString::fromUtf8("label_3"));
@@ -123,10 +123,10 @@ public:
 
         gridLayout_4->addWidget(label_3, 1, 0, 1, 1);
 
-        label_8 = new QLabel(widget_5);
-        label_8->setObjectName(QString::fromUtf8("label_8"));
+        lb_n = new QLabel(widget_5);
+        lb_n->setObjectName(QString::fromUtf8("lb_n"));
 
-        gridLayout_4->addWidget(label_8, 1, 1, 1, 1);
+        gridLayout_4->addWidget(lb_n, 1, 1, 1, 1);
 
         label_4 = new QLabel(widget_5);
         label_4->setObjectName(QString::fromUtf8("label_4"));
@@ -134,10 +134,10 @@ public:
 
         gridLayout_4->addWidget(label_4, 1, 2, 1, 1);
 
-        label_11 = new QLabel(widget_5);
-        label_11->setObjectName(QString::fromUtf8("label_11"));
+        lb_fn = new QLabel(widget_5);
+        lb_fn->setObjectName(QString::fromUtf8("lb_fn"));
 
-        gridLayout_4->addWidget(label_11, 1, 3, 1, 1);
+        gridLayout_4->addWidget(lb_fn, 1, 3, 1, 1);
 
         label_5 = new QLabel(widget_5);
         label_5->setObjectName(QString::fromUtf8("label_5"));
@@ -145,20 +145,20 @@ public:
 
         gridLayout_4->addWidget(label_5, 2, 0, 1, 1);
 
-        label_9 = new QLabel(widget_5);
-        label_9->setObjectName(QString::fromUtf8("label_9"));
+        lb_e = new QLabel(widget_5);
+        lb_e->setObjectName(QString::fromUtf8("lb_e"));
 
-        gridLayout_4->addWidget(label_9, 2, 1, 1, 1);
+        gridLayout_4->addWidget(lb_e, 2, 1, 1, 1);
 
         label_6 = new QLabel(widget_5);
         label_6->setObjectName(QString::fromUtf8("label_6"));
 
         gridLayout_4->addWidget(label_6, 2, 2, 1, 1);
 
-        label_10 = new QLabel(widget_5);
-        label_10->setObjectName(QString::fromUtf8("label_10"));
+        lb_d = new QLabel(widget_5);
+        lb_d->setObjectName(QString::fromUtf8("lb_d"));
 
-        gridLayout_4->addWidget(label_10, 2, 3, 1, 1);
+        gridLayout_4->addWidget(lb_d, 2, 3, 1, 1);
 
 
         verticalLayout_4->addWidget(widget_5);
@@ -179,20 +179,20 @@ public:
         groupBox_2->setObjectName(QString::fromUtf8("groupBox_2"));
         gridLayout_2 = new QGridLayout(groupBox_2);
         gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
-        lineEdit_2 = new QLineEdit(groupBox_2);
-        lineEdit_2->setObjectName(QString::fromUtf8("lineEdit_2"));
+        le_privete_n = new QLineEdit(groupBox_2);
+        le_privete_n->setObjectName(QString::fromUtf8("le_privete_n"));
 
-        gridLayout_2->addWidget(lineEdit_2, 2, 1, 1, 1);
+        gridLayout_2->addWidget(le_privete_n, 2, 1, 1, 1);
 
         label_15 = new QLabel(groupBox_2);
         label_15->setObjectName(QString::fromUtf8("label_15"));
 
         gridLayout_2->addWidget(label_15, 1, 0, 1, 1);
 
-        lineEdit = new QLineEdit(groupBox_2);
-        lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
+        le_privete_d = new QLineEdit(groupBox_2);
+        le_privete_d->setObjectName(QString::fromUtf8("le_privete_d"));
 
-        gridLayout_2->addWidget(lineEdit, 1, 1, 1, 1);
+        gridLayout_2->addWidget(le_privete_d, 1, 1, 1, 1);
 
         label_14 = new QLabel(groupBox_2);
         label_14->setObjectName(QString::fromUtf8("label_14"));
@@ -224,15 +224,15 @@ public:
 
         gridLayout_3->addWidget(label_20, 1, 0, 1, 1);
 
-        lineEdit_4 = new QLineEdit(groupBox_3);
-        lineEdit_4->setObjectName(QString::fromUtf8("lineEdit_4"));
+        le_public_n = new QLineEdit(groupBox_3);
+        le_public_n->setObjectName(QString::fromUtf8("le_public_n"));
 
-        gridLayout_3->addWidget(lineEdit_4, 1, 1, 1, 1);
+        gridLayout_3->addWidget(le_public_n, 1, 1, 1, 1);
 
-        lineEdit_3 = new QLineEdit(groupBox_3);
-        lineEdit_3->setObjectName(QString::fromUtf8("lineEdit_3"));
+        le_public_e = new QLineEdit(groupBox_3);
+        le_public_e->setObjectName(QString::fromUtf8("le_public_e"));
 
-        gridLayout_3->addWidget(lineEdit_3, 0, 1, 1, 1);
+        gridLayout_3->addWidget(le_public_e, 0, 1, 1, 1);
 
         pushButton_2 = new QPushButton(groupBox_3);
         pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
@@ -284,6 +284,15 @@ public:
 
         verticalLayout_3->addWidget(widget_4);
 
+        QWidget::setTabOrder(pushButton, le_privete_d);
+        QWidget::setTabOrder(le_privete_d, le_privete_n);
+        QWidget::setTabOrder(le_privete_n, pushButton_4);
+        QWidget::setTabOrder(pushButton_4, le_public_e);
+        QWidget::setTabOrder(le_public_e, le_public_n);
+        QWidget::setTabOrder(le_public_n, pushButton_2);
+        QWidget::setTabOrder(pushButton_2, textBrowser);
+        QWidget::setTabOrder(textBrowser, textBrowser_2);
+        QWidget::setTabOrder(textBrowser_2, pushButton_3);
 
         retranslateUi(Client);
 
@@ -296,17 +305,17 @@ public:
         label_13->setText(QCoreApplication::translate("Client", "Client", nullptr));
         groupBox->setTitle(QCoreApplication::translate("Client", "RSA Parameter Information", nullptr));
         label->setText(QCoreApplication::translate("Client", "p:", nullptr));
-        label_7->setText(QCoreApplication::translate("Client", "TextLabel", nullptr));
+        lb_p->setText(QCoreApplication::translate("Client", "TextLabel", nullptr));
         label_2->setText(QCoreApplication::translate("Client", "q:", nullptr));
-        label_12->setText(QCoreApplication::translate("Client", "TextLabel", nullptr));
+        lb_q->setText(QCoreApplication::translate("Client", "TextLabel", nullptr));
         label_3->setText(QCoreApplication::translate("Client", "n:", nullptr));
-        label_8->setText(QCoreApplication::translate("Client", "TextLabel", nullptr));
+        lb_n->setText(QCoreApplication::translate("Client", "TextLabel", nullptr));
         label_4->setText(QCoreApplication::translate("Client", "\317\206(n):", nullptr));
-        label_11->setText(QCoreApplication::translate("Client", "TextLabel", nullptr));
+        lb_fn->setText(QCoreApplication::translate("Client", "TextLabel", nullptr));
         label_5->setText(QCoreApplication::translate("Client", "e:", nullptr));
-        label_9->setText(QCoreApplication::translate("Client", "TextLabel", nullptr));
+        lb_e->setText(QCoreApplication::translate("Client", "TextLabel", nullptr));
         label_6->setText(QCoreApplication::translate("Client", "d:", nullptr));
-        label_10->setText(QCoreApplication::translate("Client", "TextLabel", nullptr));
+        lb_d->setText(QCoreApplication::translate("Client", "TextLabel", nullptr));
         pushButton->setText(QCoreApplication::translate("Client", "Generate new RSA parameter", nullptr));
         groupBox_2->setTitle(QCoreApplication::translate("Client", "Private Key", nullptr));
         label_15->setText(QCoreApplication::translate("Client", "d:", nullptr));
