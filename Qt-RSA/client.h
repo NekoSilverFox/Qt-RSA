@@ -3,19 +3,14 @@
 
 #include <QWidget>
 
-QT_BEGIN_NAMESPACE
-namespace Ui { class client; }
-QT_END_NAMESPACE
-
-class client : public QWidget
+class Client : public QWidget
 {
     Q_OBJECT
-
 public:
-    client(QWidget *parent = nullptr);
-    ~client();
+    explicit Client(QWidget *parent = nullptr);
 
-private:
-    Ui::client *ui;
+signals:
+
 };
+
 #endif // CLIENT_H

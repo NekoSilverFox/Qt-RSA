@@ -20,8 +20,8 @@ class RSA
 {
 public:
     RSA();                                                                            // 构造
-    void Encrypt(const string &plaintext_str, vector<unsigned int> &ciphertext_int);  // 加密
-    void Decrypt(const vector<unsigned int> &ciphertext_int, string &plaintext_str1); // 解密
+    void Encrypt(const string &plaintext_str, vector<unsigned int> &ciphertext_int, unsigned int e, unsigned int n);  // 加密
+    void Decrypt(const vector<unsigned int> &ciphertext_int, string &plaintext_str1, unsigned int d, unsigned int n); // 解密
 
 private:
     void KeyGen(); // 密钥生成
@@ -34,6 +34,7 @@ private:
     unsigned int ExGcd(const unsigned int &a, const unsigned int &b, unsigned int &x, unsigned int &y); // 扩展欧几里得算法
     unsigned int GetMulInverse(const unsigned int &a, const unsigned int &b);                           // 求乘法逆元
 
+public:
     unsigned int p_arg_; // p参数
     // 提示：参数>=0，使用unsigned int更符合语义
     unsigned int q_arg_;            // q参数
@@ -61,7 +62,7 @@ RSA::RSA()
 
 // 加密
 // 参数：字符串类型的明文，无符号整型的密文
-void RSA::Encrypt(const string &plaintext_str, vector<unsigned int> &ciphertext_int)
+void RSA::Encrypt(const string &plaintext_str, vector<unsigned int> &ciphertext_int, unsigned int e, unsigned int n)
 {
     cout << "加密：\t" << endl;
     cout << "字符串类型的明文：\t" << plaintext_str << endl;
@@ -89,7 +90,7 @@ void RSA::Encrypt(const string &plaintext_str, vector<unsigned int> &ciphertext_
 
     for (int i = 0; i < plaintext_int.size(); ++i) // 对每个明文分组，蒙哥马利快速模幂加密
     {
-        c = this->QuickPowMod(plaintext_int[i], this->e_arg_, this->n_arg_);
+        c = this->QuickPowMod(plaintext_int[i], e, n);
         ciphertext_int[i] = c;
     }
 
@@ -105,7 +106,7 @@ void RSA::Encrypt(const string &plaintext_str, vector<unsigned int> &ciphertext_
 }
 
 // 解密
-void RSA::Decrypt(const vector<unsigned int> &ciphertext_int, string &plaintext_str1)
+void RSA::Decrypt(const vector<unsigned int> &ciphertext_int, string &plaintext_str1, unsigned int d, unsigned int n)
 {
     cout << "解密：\t" << endl;
     cout << "无符号整数类型的密文：\t";
@@ -121,9 +122,8 @@ void RSA::Decrypt(const vector<unsigned int> &ciphertext_int, string &plaintext_
 
     for (int i = 0; i < ciphertext_int.size(); ++i) // 对每个密文分组，蒙哥马利快速模幂解密
     {
-        p = this->QuickPowMod(ciphertext_int[i], this->d_arg_, this->n_arg_);
+        p = this->QuickPowMod(ciphertext_int[i], d, n);
         plaintext_int[i] = p;
-        qDebug() << p;
     }
 
     cout << "无符号整数类型的明文：\t";
