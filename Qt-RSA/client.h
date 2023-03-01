@@ -15,6 +15,10 @@ public:
     explicit Client(QWidget *parent = nullptr);
     ~Client();
 
+private slots:
+    void clickBtnGenerateNewRSAParameters();
+    void clickBtnReset();
+
 private:
     Ui::Client *ui;
 };

@@ -53,9 +53,11 @@ OBJECTS_DIR   = ./
 ####### Files
 
 SOURCES       = ../Qt-RSA/client.cpp \
-		../Qt-RSA/main.cpp moc_client.cpp
+		../Qt-RSA/main.cpp \
+		../Qt-RSA/rsa.cpp moc_client.cpp
 OBJECTS       = client.o \
 		main.o \
+		rsa.o \
 		moc_client.o
 DIST          = /usr/local/Qt-6.3.0/mkspecs/features/spec_pre.prf \
 		/usr/local/Qt-6.3.0/mkspecs/features/device_config.prf \
@@ -323,7 +325,8 @@ DIST          = /usr/local/Qt-6.3.0/mkspecs/features/spec_pre.prf \
 		/usr/local/Qt-6.3.0/mkspecs/features/lex.prf \
 		../Qt-RSA/Qt-RSA.pro ../Qt-RSA/client.h \
 		../Qt-RSA/rsa.h ../Qt-RSA/client.cpp \
-		../Qt-RSA/main.cpp
+		../Qt-RSA/main.cpp \
+		../Qt-RSA/rsa.cpp
 QMAKE_TARGET  = Qt-RSA
 DESTDIR       = 
 TARGET        = Qt-RSA.app/Contents/MacOS/Qt-RSA
@@ -916,7 +919,7 @@ distdir: FORCE
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /usr/local/Qt-6.3.0/mkspecs/features/data/dummy.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../Qt-RSA/client.h ../Qt-RSA/rsa.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../Qt-RSA/client.cpp ../Qt-RSA/main.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../Qt-RSA/client.cpp ../Qt-RSA/main.cpp ../Qt-RSA/rsa.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../Qt-RSA/client.ui $(DISTDIR)/
 
 
@@ -985,21 +988,31 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean compiler_ui
 
 ####### Compile
 
-client.o: ../Qt-RSA/client.cpp ../Qt-RSA/client.h \
+client.o: ../Qt-RSA/client.cpp ../Qt-RSA/rsa.h \
+		/usr/local/Qt-6.3.0/lib/QtCore.framework/Headers/QRandomGenerator \
+		/usr/local/Qt-6.3.0/lib/QtCore.framework/Headers/qrandom.h \
+		../Qt-RSA/client.h \
 		/usr/local/Qt-6.3.0/lib/QtWidgets.framework/Headers/QWidget \
 		/usr/local/Qt-6.3.0/lib/QtWidgets.framework/Headers/qwidget.h \
 		ui_client.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o client.o ../Qt-RSA/client.cpp
 
-main.o: ../Qt-RSA/main.cpp ../Qt-RSA/rsa.h \
-		/usr/local/Qt-6.3.0/lib/QtCore.framework/Headers/qDebug \
-		/usr/local/Qt-6.3.0/lib/QtCore.framework/Headers/qdebug.h \
+main.o: ../Qt-RSA/main.cpp ../Qt-RSA/client.h \
+		/usr/local/Qt-6.3.0/lib/QtWidgets.framework/Headers/QWidget \
+		/usr/local/Qt-6.3.0/lib/QtWidgets.framework/Headers/qwidget.h \
+		../Qt-RSA/rsa.h \
 		/usr/local/Qt-6.3.0/lib/QtCore.framework/Headers/QRandomGenerator \
 		/usr/local/Qt-6.3.0/lib/QtCore.framework/Headers/qrandom.h \
 		/usr/local/Qt-6.3.0/lib/QtCore.framework/Headers/QDebug \
+		/usr/local/Qt-6.3.0/lib/QtCore.framework/Headers/qdebug.h \
 		/usr/local/Qt-6.3.0/lib/QtWidgets.framework/Headers/QApplication \
 		/usr/local/Qt-6.3.0/lib/QtWidgets.framework/Headers/qapplication.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../Qt-RSA/main.cpp
+
+rsa.o: ../Qt-RSA/rsa.cpp ../Qt-RSA/rsa.h \
+		/usr/local/Qt-6.3.0/lib/QtCore.framework/Headers/QRandomGenerator \
+		/usr/local/Qt-6.3.0/lib/QtCore.framework/Headers/qrandom.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o rsa.o ../Qt-RSA/rsa.cpp
 
 moc_client.o: moc_client.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_client.o moc_client.cpp

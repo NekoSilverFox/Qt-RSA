@@ -10,7 +10,8 @@ CONFIG += c++17
 
 SOURCES += \
     client.cpp \
-    main.cpp
+    main.cpp \
+    rsa.cpp
 
 HEADERS += \
     client.h \

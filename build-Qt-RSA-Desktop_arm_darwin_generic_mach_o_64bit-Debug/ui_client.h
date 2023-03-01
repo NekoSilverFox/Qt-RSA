@@ -44,7 +44,7 @@ public:
     QLabel *lb_e;
     QLabel *label_6;
     QLabel *lb_d;
-    QPushButton *pushButton;
+    QPushButton *btnGenerateNewRSAParameters;
     QWidget *widget;
     QHBoxLayout *horizontalLayout;
     QGroupBox *groupBox_2;
@@ -53,7 +53,7 @@ public:
     QLabel *label_15;
     QLineEdit *le_privete_d;
     QLabel *label_14;
-    QPushButton *pushButton_4;
+    QPushButton *btnReset;
     QGroupBox *groupBox_3;
     QGridLayout *gridLayout_3;
     QLabel *label_19;
@@ -163,10 +163,10 @@ public:
 
         verticalLayout_4->addWidget(widget_5);
 
-        pushButton = new QPushButton(groupBox);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+        btnGenerateNewRSAParameters = new QPushButton(groupBox);
+        btnGenerateNewRSAParameters->setObjectName(QString::fromUtf8("btnGenerateNewRSAParameters"));
 
-        verticalLayout_4->addWidget(pushButton);
+        verticalLayout_4->addWidget(btnGenerateNewRSAParameters);
 
 
         verticalLayout_3->addWidget(groupBox);
@@ -200,10 +200,10 @@ public:
 
         gridLayout_2->addWidget(label_14, 2, 0, 1, 1);
 
-        pushButton_4 = new QPushButton(groupBox_2);
-        pushButton_4->setObjectName(QString::fromUtf8("pushButton_4"));
+        btnReset = new QPushButton(groupBox_2);
+        btnReset->setObjectName(QString::fromUtf8("btnReset"));
 
-        gridLayout_2->addWidget(pushButton_4, 3, 0, 1, 2);
+        gridLayout_2->addWidget(btnReset, 3, 0, 1, 2);
 
 
         horizontalLayout->addWidget(groupBox_2);
@@ -284,10 +284,10 @@ public:
 
         verticalLayout_3->addWidget(widget_4);
 
-        QWidget::setTabOrder(pushButton, le_privete_d);
+        QWidget::setTabOrder(btnGenerateNewRSAParameters, le_privete_d);
         QWidget::setTabOrder(le_privete_d, le_privete_n);
-        QWidget::setTabOrder(le_privete_n, pushButton_4);
-        QWidget::setTabOrder(pushButton_4, le_public_e);
+        QWidget::setTabOrder(le_privete_n, btnReset);
+        QWidget::setTabOrder(btnReset, le_public_e);
         QWidget::setTabOrder(le_public_e, le_public_n);
         QWidget::setTabOrder(le_public_n, pushButton_2);
         QWidget::setTabOrder(pushButton_2, textBrowser);
@@ -305,22 +305,22 @@ public:
         label_13->setText(QCoreApplication::translate("Client", "Client", nullptr));
         groupBox->setTitle(QCoreApplication::translate("Client", "RSA Parameter Information", nullptr));
         label->setText(QCoreApplication::translate("Client", "p:", nullptr));
-        lb_p->setText(QCoreApplication::translate("Client", "TextLabel", nullptr));
+        lb_p->setText(QCoreApplication::translate("Client", "NONE", nullptr));
         label_2->setText(QCoreApplication::translate("Client", "q:", nullptr));
-        lb_q->setText(QCoreApplication::translate("Client", "TextLabel", nullptr));
+        lb_q->setText(QCoreApplication::translate("Client", "NONE", nullptr));
         label_3->setText(QCoreApplication::translate("Client", "n:", nullptr));
-        lb_n->setText(QCoreApplication::translate("Client", "TextLabel", nullptr));
+        lb_n->setText(QCoreApplication::translate("Client", "NONE", nullptr));
         label_4->setText(QCoreApplication::translate("Client", "\317\206(n):", nullptr));
-        lb_fn->setText(QCoreApplication::translate("Client", "TextLabel", nullptr));
+        lb_fn->setText(QCoreApplication::translate("Client", "NONE", nullptr));
         label_5->setText(QCoreApplication::translate("Client", "e:", nullptr));
-        lb_e->setText(QCoreApplication::translate("Client", "TextLabel", nullptr));
+        lb_e->setText(QCoreApplication::translate("Client", "NONE", nullptr));
         label_6->setText(QCoreApplication::translate("Client", "d:", nullptr));
-        lb_d->setText(QCoreApplication::translate("Client", "TextLabel", nullptr));
-        pushButton->setText(QCoreApplication::translate("Client", "Generate new RSA parameter", nullptr));
+        lb_d->setText(QCoreApplication::translate("Client", "NONE", nullptr));
+        btnGenerateNewRSAParameters->setText(QCoreApplication::translate("Client", "Generate new RSA parameter", nullptr));
         groupBox_2->setTitle(QCoreApplication::translate("Client", "Private Key", nullptr));
         label_15->setText(QCoreApplication::translate("Client", "d:", nullptr));
         label_14->setText(QCoreApplication::translate("Client", "n:", nullptr));
-        pushButton_4->setText(QCoreApplication::translate("Client", "Reset", nullptr));
+        btnReset->setText(QCoreApplication::translate("Client", "Reset", nullptr));
         groupBox_3->setTitle(QCoreApplication::translate("Client", "Public Key", nullptr));
         label_19->setText(QCoreApplication::translate("Client", "e:", nullptr));
         label_20->setText(QCoreApplication::translate("Client", "n:", nullptr));
