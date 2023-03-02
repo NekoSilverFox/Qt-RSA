@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Encrypt.svg</file>
+    </qresource>
+</RCC>
