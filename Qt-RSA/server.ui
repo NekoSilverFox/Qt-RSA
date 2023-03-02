@@ -108,7 +108,7 @@
        <widget class="QTextBrowser" name="tbCodedText"/>
       </item>
       <item>
-       <widget class="QPushButton" name="btnDecrypt_2">
+       <widget class="QPushButton" name="btnSendCodedText">
         <property name="text">
          <string>Send coded text to Client ✈</string>
         </property>

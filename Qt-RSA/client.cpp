@@ -12,7 +12,7 @@ Client::Client(QWidget *parent) :
     connect(ui->btnReset, &QPushButton::clicked, this, &Client::clickBtnReset);
     connect(ui->btnSendPublicKey, &QPushButton::clicked,
             this, [=](){ emit Client::sendPublicKey(ui->le_public_e->text().toUInt(), ui->le_public_n->text().toUInt()); });
-
+    connect(ui->btnDecrypt, &QPushButton::clicked, this, &Client::clickBtnDecrypt);
 }
 
 Client::~Client()
@@ -26,16 +26,16 @@ void Client::clickBtnGenerateNewRSAParameters()
     RSA *rsa;
     string plaintext_str("abc");                            // 字符串类型的明文
     vector<unsigned int> ciphertext_int(plaintext_str.size(), 0); // 无符号整数类型的密文
-    string plaintext_str1(plaintext_str.size(), '\0');            // 字符串类型的明文   解密后的明文
+    QString plaintext_str1;            // 字符串类型的明文   解密后的明文
 
     do
     {
         rsa = new RSA;
 
         RSA::Encrypt(plaintext_str, ciphertext_int, rsa->e_arg_, rsa->n_arg_);  // 加密得密文
-        RSA::Decrypt(ciphertext_int, plaintext_str1, rsa->d_arg_, rsa->n_arg_); // 解密得明文
+        plaintext_str1 = RSA::Decrypt(ciphertext_int, rsa->d_arg_, rsa->n_arg_); // 解密得明文
 
-    } while (plaintext_str != plaintext_str1);
+    } while (plaintext_str != plaintext_str1.toStdString());
 
     ui->lb_p->setText(QString::number(rsa->p_arg_));
     ui->lb_q->setText(QString::number(rsa->q_arg_));
@@ -57,4 +57,30 @@ void Client::clickBtnReset()
 {
     ui->le_privete_d->setText(ui->lb_d->text());
     ui->le_privete_n->setText(ui->lb_n->text());
+}
+
+void Client::clickBtnDecrypt()
+{
+    if (0 == this->_ciphertext_int.size())
+    {
+        return;
+    }
+
+    QString plaintext_str1 = RSA::Decrypt(this->_ciphertext_int, ui->le_privete_d->text().toUInt(), ui->le_privete_n->text().toUInt()); // 解密得明文
+    ui->tbExplicitText->clear();
+    ui->tbExplicitText->append(plaintext_str1);
+}
+
+void Client::getCodedText(std::vector<unsigned int> ciphertext_int)
+{
+    this->_ciphertext_int = ciphertext_int;
+
+    ui->tbCodedText->clear();
+    QString str;
+    for (unsigned int i : this->_ciphertext_int)
+    {
+        str.append(QString::number(i));
+    }
+    ui->tbCodedText->append(str);
+//    ui->tbCodedText->append(QString::fromStdString(std::string(this->ciphertext_int.begin(), this->ciphertext_int.end())));  // 字符形式的输出
 }

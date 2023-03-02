@@ -18,12 +18,15 @@ public:
 signals:
     void sendPublicKey(unsigned int e, unsigned int n);
 
-private slots:
+public slots:
     void clickBtnGenerateNewRSAParameters();
     void clickBtnReset();
+    void clickBtnDecrypt();
+    void getCodedText(std::vector<unsigned int> ciphertext_int);
 
 private:
     Ui::Client *ui;
+    std::vector<unsigned int> _ciphertext_int;
 };
 
 #endif // CLIENT_H

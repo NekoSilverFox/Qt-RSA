@@ -1,5 +1,5 @@
 #include "rsa.h"
-
+#include <QString>
 
 // 构造
 RSA::RSA()
@@ -62,7 +62,7 @@ void RSA::Encrypt(const string &plaintext_str, vector<unsigned int> &ciphertext_
 }
 
 // 解密
-void RSA::Decrypt(const vector<unsigned int> &ciphertext_int, string &plaintext_str1, unsigned int d, unsigned int n)
+QString RSA::Decrypt(const vector<unsigned int> &ciphertext_int, unsigned int d, unsigned int n)
 {
     cout << "解密：\t" << endl;
     cout << "无符号整数类型的密文：\t";
@@ -91,15 +91,15 @@ void RSA::Decrypt(const vector<unsigned int> &ciphertext_int, string &plaintext_
 
     // 2.依据ASCII码将明文的无符号整数类型转换为字符串数据类型
     char p_str = '\0'; // 字符类型的明文分组    1个数字1个字符为1个明文分组
+    QString res_str;
     for (int i = 0; i < plaintext_int.size(); ++i)
     {
-        p_str = static_cast<char>(plaintext_int[i]); // 注意：利用强制类型转换
-        plaintext_str1[i] = (p_str);
+        res_str.append(QChar::fromLatin1(static_cast<char>(plaintext_int[i]))); // 注意：利用强制类型转换
     }
 
-    cout << "字符串类型的明文：\t" << plaintext_str1 << endl;
+    cout << "字符串类型的明文：\t" << res_str.toStdString() << endl;
 
-    return;
+    return res_str;
 }
 
 // 密钥生成

@@ -9,6 +9,7 @@ WidgetManager::WidgetManager(QObject *parent)
     Server* server = new Server;
 
     connect(client, &Client::sendPublicKey, server, &Server::setPublicKey);
+    connect(server, &Server::sendCodedText, client, &Client::getCodedText);
 
     client->show();
     server->show();

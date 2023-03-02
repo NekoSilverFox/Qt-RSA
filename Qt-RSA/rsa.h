@@ -20,7 +20,7 @@ class RSA
 public:
     RSA();                                                                            // 构造
     static void Encrypt(const string &plaintext_str, vector<unsigned int> &ciphertext_int, unsigned int e, unsigned int n);  // 加密
-    static void Decrypt(const vector<unsigned int> &ciphertext_int, string &plaintext_str1, unsigned int d, unsigned int n); // 解密
+    static QString Decrypt(const vector<unsigned int> &ciphertext_int, unsigned int d, unsigned int n); // 解密
 
 private:
     void KeyGen(); // 密钥生成

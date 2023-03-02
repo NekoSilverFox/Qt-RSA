@@ -267,7 +267,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QTextBrowser" name="textBrowser"/>
+       <widget class="QTextBrowser" name="tbCodedText"/>
       </item>
      </layout>
     </widget>
@@ -283,7 +283,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QTextBrowser" name="textBrowser_2"/>
+       <widget class="QTextBrowser" name="tbExplicitText"/>
       </item>
       <item>
        <widget class="QPushButton" name="btnDecrypt">
@@ -305,8 +305,8 @@
   <tabstop>le_public_e</tabstop>
   <tabstop>le_public_n</tabstop>
   <tabstop>btnSendPublicKey</tabstop>
-  <tabstop>textBrowser</tabstop>
-  <tabstop>textBrowser_2</tabstop>
+  <tabstop>tbCodedText</tabstop>
+  <tabstop>tbExplicitText</tabstop>
   <tabstop>btnDecrypt</tabstop>
  </tabstops>
  <resources/>

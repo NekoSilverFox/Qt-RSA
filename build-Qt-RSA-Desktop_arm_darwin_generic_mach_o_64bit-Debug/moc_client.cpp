@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_Client_t {
-    const uint offsetsAndSize[14];
-    char stringdata0[73];
+    const uint offsetsAndSize[22];
+    char stringdata0[135];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(offsetof(qt_meta_stringdata_Client_t, stringdata0) + ofs), len 
@@ -35,12 +35,18 @@ QT_MOC_LITERAL(21, 0), // ""
 QT_MOC_LITERAL(22, 1), // "e"
 QT_MOC_LITERAL(24, 1), // "n"
 QT_MOC_LITERAL(26, 32), // "clickBtnGenerateNewRSAParameters"
-QT_MOC_LITERAL(59, 13) // "clickBtnReset"
+QT_MOC_LITERAL(59, 13), // "clickBtnReset"
+QT_MOC_LITERAL(73, 15), // "clickBtnDecrypt"
+QT_MOC_LITERAL(89, 12), // "getCodedText"
+QT_MOC_LITERAL(102, 17), // "std::vector<uint>"
+QT_MOC_LITERAL(120, 14) // "ciphertext_int"
 
     },
     "Client\0sendPublicKey\0\0e\0n\0"
     "clickBtnGenerateNewRSAParameters\0"
-    "clickBtnReset"
+    "clickBtnReset\0clickBtnDecrypt\0"
+    "getCodedText\0std::vector<uint>\0"
+    "ciphertext_int"
 };
 #undef QT_MOC_LITERAL
 
@@ -50,7 +56,7 @@ static const uint qt_meta_data_Client[] = {
       10,       // revision
        0,       // classname
        0,    0, // classinfo
-       3,   14, // methods
+       5,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -58,11 +64,13 @@ static const uint qt_meta_data_Client[] = {
        1,       // signalCount
 
  // signals: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    2,   32,    2, 0x06,    1 /* Public */,
+       1,    2,   44,    2, 0x06,    1 /* Public */,
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       5,    0,   37,    2, 0x08,    4 /* Private */,
-       6,    0,   38,    2, 0x08,    5 /* Private */,
+       5,    0,   49,    2, 0x0a,    4 /* Public */,
+       6,    0,   50,    2, 0x0a,    5 /* Public */,
+       7,    0,   51,    2, 0x0a,    6 /* Public */,
+       8,    1,   52,    2, 0x0a,    7 /* Public */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::UInt, QMetaType::UInt,    3,    4,
@@ -70,6 +78,8 @@ static const uint qt_meta_data_Client[] = {
  // slots: parameters
     QMetaType::Void,
     QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void, 0x80000000 | 9,   10,
 
        0        // eod
 };
@@ -83,6 +93,8 @@ void Client::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void
         case 0: _t->sendPublicKey((*reinterpret_cast< std::add_pointer_t<uint>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<uint>>(_a[2]))); break;
         case 1: _t->clickBtnGenerateNewRSAParameters(); break;
         case 2: _t->clickBtnReset(); break;
+        case 3: _t->clickBtnDecrypt(); break;
+        case 4: _t->getCodedText((*reinterpret_cast< std::add_pointer_t<std::vector<uint>>>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -105,7 +117,7 @@ const QMetaObject Client::staticMetaObject = { {
     nullptr,
 qt_incomplete_metaTypeArray<qt_meta_stringdata_Client_t
 , QtPrivate::TypeAndForceComplete<Client, std::true_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<unsigned int, std::false_type>, QtPrivate::TypeAndForceComplete<unsigned int, std::false_type>
-, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>
+, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<std::vector<unsigned int>, std::false_type>
 
 
 >,
@@ -132,13 +144,13 @@ int Client::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 3)
+        if (_id < 5)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 3;
+        _id -= 5;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 3)
+        if (_id < 5)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 3;
+        _id -= 5;
     }
     return _id;
 }

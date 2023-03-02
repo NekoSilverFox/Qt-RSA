@@ -15,12 +15,16 @@ public:
     explicit Server(QWidget *parent = nullptr);
     ~Server();
 
+signals:
+    void sendCodedText(std::vector<unsigned int> ciphertext_int);
+
 public slots:
     void setPublicKey(unsigned int e, unsigned int n);
     void clickBtnEncrypt();
 
 private:
     Ui::Server *ui;
+    std::vector<unsigned int> ciphertext_int;
 };
 
 #endif // SERVER_H

@@ -9,6 +9,9 @@ Server::Server(QWidget *parent) :
     ui->setupUi(this);
 
     connect(ui->btnEncrypt, &QPushButton::clicked, this, &Server::clickBtnEncrypt);
+    connect(ui->btnSendCodedText, &QPushButton::clicked,
+            this, [=](){ emit Server::sendCodedText(this->ciphertext_int); });
+
 }
 
 Server::~Server()
@@ -25,18 +28,18 @@ void Server::setPublicKey(unsigned int e, unsigned int n)
 
 void Server::clickBtnEncrypt()
 {
-    vector<unsigned int> ciphertext_int(ui->pteExplicitText->toPlainText().toStdString().size(), 0);
-    RSA::Encrypt(ui->pteExplicitText->toPlainText().toStdString(), ciphertext_int,
+    vector<unsigned int> temp_ciphertext_int(ui->pteExplicitText->toPlainText().toStdString().size(), 0);
+    RSA::Encrypt(ui->pteExplicitText->toPlainText().toStdString(), temp_ciphertext_int,
                  ui->le_public_e->text().toUInt(), ui->le_public_n->text().toUInt());
-    qDebug() << ciphertext_int;
+    this->ciphertext_int = temp_ciphertext_int;
 
     ui->tbCodedText->clear();
-    QByteArray byteArray;
-    for (unsigned int i : ciphertext_int)
+    QString str;
+    for (unsigned int i : temp_ciphertext_int)
     {
-        byteArray.append(char(i));
-        qDebug() << char(i);
+        str.append(QString::number(i));
     }
+    ui->tbCodedText->append(str);
+//    ui->tbCodedText->append(QString::fromStdString(std::string(this->ciphertext_int.begin(), this->ciphertext_int.end())));  // 字符形式的输出
 
-    ui->tbCodedText->append(QString::fromLatin1(byteArray));
 }

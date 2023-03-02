@@ -64,11 +64,11 @@ public:
     QWidget *widget_3;
     QVBoxLayout *verticalLayout;
     QLabel *label_22;
-    QTextBrowser *textBrowser;
+    QTextBrowser *tbCodedText;
     QWidget *widget_4;
     QVBoxLayout *verticalLayout_2;
     QLabel *label_23;
-    QTextBrowser *textBrowser_2;
+    QTextBrowser *tbExplicitText;
     QPushButton *btnDecrypt;
 
     void setupUi(QWidget *Client)
@@ -254,10 +254,10 @@ public:
 
         verticalLayout->addWidget(label_22);
 
-        textBrowser = new QTextBrowser(widget_3);
-        textBrowser->setObjectName(QString::fromUtf8("textBrowser"));
+        tbCodedText = new QTextBrowser(widget_3);
+        tbCodedText->setObjectName(QString::fromUtf8("tbCodedText"));
 
-        verticalLayout->addWidget(textBrowser);
+        verticalLayout->addWidget(tbCodedText);
 
 
         verticalLayout_3->addWidget(widget_3);
@@ -271,10 +271,10 @@ public:
 
         verticalLayout_2->addWidget(label_23);
 
-        textBrowser_2 = new QTextBrowser(widget_4);
-        textBrowser_2->setObjectName(QString::fromUtf8("textBrowser_2"));
+        tbExplicitText = new QTextBrowser(widget_4);
+        tbExplicitText->setObjectName(QString::fromUtf8("tbExplicitText"));
 
-        verticalLayout_2->addWidget(textBrowser_2);
+        verticalLayout_2->addWidget(tbExplicitText);
 
         btnDecrypt = new QPushButton(widget_4);
         btnDecrypt->setObjectName(QString::fromUtf8("btnDecrypt"));
@@ -290,9 +290,9 @@ public:
         QWidget::setTabOrder(btnReset, le_public_e);
         QWidget::setTabOrder(le_public_e, le_public_n);
         QWidget::setTabOrder(le_public_n, btnSendPublicKey);
-        QWidget::setTabOrder(btnSendPublicKey, textBrowser);
-        QWidget::setTabOrder(textBrowser, textBrowser_2);
-        QWidget::setTabOrder(textBrowser_2, btnDecrypt);
+        QWidget::setTabOrder(btnSendPublicKey, tbCodedText);
+        QWidget::setTabOrder(tbCodedText, tbExplicitText);
+        QWidget::setTabOrder(tbExplicitText, btnDecrypt);
 
         retranslateUi(Client);
 
