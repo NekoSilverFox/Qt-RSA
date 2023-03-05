@@ -33,7 +33,7 @@
    <item>
     <widget class="QGroupBox" name="groupBox_3">
      <property name="title">
-      <string>Public Key</string>
+      <string>Public Key / Открытый ключ</string>
      </property>
      <layout class="QGridLayout" name="gridLayout">
       <item row="0" column="0">
@@ -77,7 +77,7 @@
       <item>
        <widget class="QLabel" name="label_22">
         <property name="text">
-         <string>Explicit text</string>
+         <string>Explicit text / Открытый текст</string>
         </property>
        </widget>
       </item>
@@ -87,7 +87,7 @@
       <item>
        <widget class="QPushButton" name="btnEncrypt">
         <property name="text">
-         <string>🔐Encrypted Text</string>
+         <string>🔐Encrypted Text (зашифровать текст)</string>
         </property>
        </widget>
       </item>
@@ -100,7 +100,7 @@
       <item>
        <widget class="QLabel" name="label_23">
         <property name="text">
-         <string>Coded text</string>
+         <string>Coded text / Шифрованный текст</string>
         </property>
        </widget>
       </item>
