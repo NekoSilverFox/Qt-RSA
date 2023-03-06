@@ -8,6 +8,10 @@ Client::Client(QWidget *parent) :
 {
     ui->setupUi(this);
     this->setWindowTitle("RSA Client");
+    this->setWindowIcon(QIcon(":/Encrypt.svg"));
+    this->setAttribute(Qt::WA_DeleteOnClose);
+//    ui->btnReset->setEnabled(false);
+//    ui->btnSendPublicKey->setEnabled(false);
 
     connect(ui->btnGenerateNewRSAParameters, &QPushButton::clicked, this, &Client::clickBtnGenerateNewRSAParameters);
     connect(ui->btnReset, &QPushButton::clicked, this, &Client::clickBtnReset);
@@ -50,6 +54,9 @@ void Client::clickBtnGenerateNewRSAParameters()
 
     ui->le_public_e->setText(QString::number(rsa->e_arg_));
     ui->le_public_n->setText(QString::number(rsa->n_arg_));
+
+//    ui->btnReset->setEnabled(true);
+//    ui->btnSendPublicKey->setEnabled(true);
 
     delete rsa;
 }

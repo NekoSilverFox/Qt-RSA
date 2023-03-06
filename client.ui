@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>434</width>
+    <width>451</width>
     <height>779</height>
    </rect>
   </property>
@@ -153,7 +153,7 @@
       <item>
        <widget class="QPushButton" name="btnGenerateNewRSAParameters">
         <property name="text">
-         <string>Generate new RSA parameter</string>
+         <string>Generate new RSA parameter / Сгенерировать параметры</string>
         </property>
        </widget>
       </item>
@@ -166,7 +166,7 @@
       <item>
        <widget class="QGroupBox" name="groupBox_2">
         <property name="title">
-         <string>Private Key / Открытый ключ</string>
+         <string>Private Key</string>
         </property>
         <layout class="QGridLayout" name="gridLayout_2">
          <item row="2" column="1">
@@ -208,7 +208,7 @@
       <item>
        <widget class="QGroupBox" name="groupBox_3">
         <property name="title">
-         <string>Public Key / Закрытый ключ</string>
+         <string>Public Key</string>
         </property>
         <layout class="QGridLayout" name="gridLayout_3">
          <item row="0" column="0">

@@ -1,6 +1,9 @@
 #include "rsa.h"
 #include <QString>
 
+const unsigned int MIN_PRIME_NUM = 10;
+const unsigned int MAX_PRIME_NUM = 1000;
+
 // 构造
 RSA::RSA()
 {
@@ -29,7 +32,7 @@ vector<unsigned int> RSA::Encrypt(const string &plaintext_str, unsigned int e, u
     // 提示：要求明文分组P < 参数n，依据ASCII范围0~255必 < n，不再处理
     vector<unsigned int> plaintext_int(plaintext_str.size(), 0); // 无符号整数类型的明文    1个字符为1个数字
 
-    for (int i = 0; i < plaintext_str.size(); ++i)
+    for (auto i = 0; i < plaintext_str.size(); ++i)
     {
         p = plaintext_str[i]; // 注意：利用自动类型转换
         plaintext_int[i] = (p);
@@ -45,7 +48,7 @@ vector<unsigned int> RSA::Encrypt(const string &plaintext_str, unsigned int e, u
     // 2.加密
     unsigned int c = 0; // 密文分组   1个数字明文加密得1个数字密文，1个数字为1个密文分组
     vector<unsigned int> ciphertext_int(plaintext_str.size(), 0); // 无符号整数类型的密文
-    for (int i = 0; i < plaintext_int.size(); ++i) // 对每个明文分组，蒙哥马利快速模幂加密
+    for (auto i = 0; i < plaintext_int.size(); ++i) // 对每个明文分组，蒙哥马利快速模幂加密
     {
         c = QuickPowMod(plaintext_int[i], e, n);
         ciphertext_int[i] = c;
@@ -77,7 +80,7 @@ QString RSA::Decrypt(const vector<unsigned int> &ciphertext_int, unsigned int d,
     long long p = 0;                                           // 明文分组 1个数字密文解密得1个数字明文，1个数字为1个明文分组
     vector<unsigned int> plaintext_int(ciphertext_int.size(), 0); // 无符号整数类型的明文    1个字符为1个数字
 
-    for (int i = 0; i < ciphertext_int.size(); ++i) // 对每个密文分组，蒙哥马利快速模幂解密
+    for (auto i = 0; i < ciphertext_int.size(); ++i) // 对每个密文分组，蒙哥马利快速模幂解密
     {
         p = QuickPowMod(ciphertext_int[i], d, n);
         plaintext_int[i] = p;
@@ -91,9 +94,8 @@ QString RSA::Decrypt(const vector<unsigned int> &ciphertext_int, unsigned int d,
     cout << endl;
 
     // 2.依据ASCII码将明文的无符号整数类型转换为字符串数据类型
-    char p_str = '\0'; // 字符类型的明文分组    1个数字1个字符为1个明文分组
     QString res_str;
-    for (int i = 0; i < plaintext_int.size(); ++i)
+    for (auto i = 0; i < plaintext_int.size(); ++i)
     {
         res_str.append(QChar::fromLatin1(static_cast<char>(plaintext_int[i]))); // 注意：利用强制类型转换
     }
@@ -161,12 +163,11 @@ unsigned int RSA::GetPrimeNum()
     bool prime_flag = false;         // 素数标志，最终素性测试结果。false0不是素数，true1可能为素数
     // 提示：初始化在循环外的变量在循环中注意是否需要更新、重新初始化
 
-    while (1) // 循环
+    while (true) // 循环
     {
         // 1.1随机取一个期望大小的奇数
         // 1.1.1取随机数
-//        random = rand(); // 随机数 一般是4~5位数，不超过unsigned int的表示范围
-        random = QRandomGenerator::global()->bounded(10, 1000);
+        random = QRandomGenerator::global()->bounded(MIN_PRIME_NUM, MAX_PRIME_NUM);  // 随机数 一般是4~5位数，不超过unsigned int的表示范围
 
         // 1.1.2取奇数
         if (random % 2 == 0) // 如果是偶数，+1成为奇数
@@ -280,7 +281,7 @@ bool RSA::PrimalityTest(const unsigned int &n, const unsigned int &a) // 参数�
     }
 
     // 第二个判断条件：二次探测时，只要存在不为1且不为n-1，则必定不是素数
-    for (int j = 0; j < k; ++j) // 0 ~ k-1
+    for (auto j = 0; j < k; ++j) // 0 ~ k-1
     {
         aq_mod_n = this->QuickPowMod(aq_mod_n, 2, n);
         // 对序列二次探测 计算a ^ (q × 2 ^ j) % n = aq_mod_n ^ (2 ^ j) % n。每次循环都幂2相当于(2 ^ j)

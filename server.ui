@@ -87,7 +87,7 @@
       <item>
        <widget class="QPushButton" name="btnEncrypt">
         <property name="text">
-         <string>🔐Encrypted Text (зашифровать текст)</string>
+         <string>🔐Encrypted Text (Зашифровать текст)</string>
         </property>
        </widget>
       </item>

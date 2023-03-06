@@ -2,12 +2,16 @@
 #include "rsa.h"
 #include "ui_server.h"
 
+#include <QMessageBox>
+
 Server::Server(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::Server)
 {
     ui->setupUi(this);
     this->setWindowTitle("RSA Server");
+    this->setWindowIcon(QIcon(":/Encrypt.svg"));
+    this->setAttribute(Qt::WA_DeleteOnClose);
 
     connect(ui->btnEncrypt, &QPushButton::clicked, this, &Server::clickBtnEncrypt);
     connect(ui->btnSendCodedText, &QPushButton::clicked,
@@ -29,6 +33,14 @@ void Server::setPublicKey(unsigned int e, unsigned int n)
 
 void Server::clickBtnEncrypt()
 {
+    if (ui->pteExplicitText->toPlainText().isEmpty() ||
+            ui->le_public_e->text().isEmpty() ||
+            ui->le_public_n->text().isEmpty())
+    {
+        QMessageBox::warning(this, "Warining", "Public key or Explicit text is empty!");
+        return;
+    }
+
     this->ciphertext_int = RSA::Encrypt(ui->pteExplicitText->toPlainText().toStdString(),
                                         ui->le_public_e->text().toUInt(), ui->le_public_n->text().toUInt());
 
